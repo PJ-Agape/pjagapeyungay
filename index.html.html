@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ágape Joven - Parroquia San Miguel de Yungay</title>
+    <!-- Google Fonts para una tipografía moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Variables de colores basadas en el logo */
+        :root {
+            --celeste-fondo: #8ED2FF;
+            --azul-texto: #1C4E9C;
+            --naranja-acento: #F05423;
+            --blanco: #ffffff;
+            --amarillo-cruz: #F7B500;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, var(--celeste-fondo) 0%, #5cbcfc 100%);
+            color: var(--azul-texto);
+        }
+
+        /* Contenedor del fondo dinámico */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Fondo detrás del contenido */
+        }
+
+        /* Contenedor principal */
+        .main-container {
+            position: relative;
+            z-index: 2; /* Por encima de las partículas */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Estilo del Logo */
+        .logo-container img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Textos */
+        h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--naranja-acento);
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        p.description {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            color: #0f3066;
+            font-weight: 500;
+        }
+
+        /* Botón de Acción (Call to Action) */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--naranja-acento);
+            color: var(--blanco);
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(240, 84, 35, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            background-color: #d9461a;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(240, 84, 35, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--azul-texto);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.2rem; }
+            p.description { font-size: 1rem; }
+            .logo-container img { width: 200px; height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Div para el fondo interactivo -->
+    <div id="particles-js"></div>
+
+    <!-- Contenido de la Landing Page -->
+    <div class="main-container">
+        <div class="logo-container">
+            <!-- Llamado exacto al archivo de imagen adjunto -->
+            <img src="Logo Agape.jpg" alt="Logo Ágape Joven - Parroquia San Miguel de Yungay">
+        </div>
+        
+        <h1>Ágape Joven</h1>
+        <h2>Amor que Transforma</h2>
+        
+        <p class="description">
+            ¡Te invitamos a ser parte de nuestra Pastoral Juvenil! Un espacio creado para compartir, crecer en la fe y formar lazos inquebrantables. Ven y descubre el amor que transforma.
+        </p>
+        
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd97D7XszzaozsbA5fx7GmBlzaK96AIeqG-InOHybDt5OLoKQ/viewform?usp=header" target="_blank" class="cta-button">
+            ¡Quiero Unirme!
+        </a>
+
+        <footer>
+            <p>Parroquia San Miguel de Yungay</p>
+        </footer>
+    </div>
+
+    <!-- Scripts para el fondo dinámico -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        // Configuración de las partículas para que parezcan chispas de luz (amarillo/blanco)
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 60,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": ["#ffffff", "#F7B500", "#F05423"] // Colores basados en el logo
+                },
+                "shape": {
+                    "type": "circle",
+                },
+                "opacity": {
+                    "value": 0.6,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 4,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab" // Las partículas se acercan al cursor
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push" // Añade más partículas al hacer clic
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
